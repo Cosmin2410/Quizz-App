@@ -1,3 +1,10 @@
 body {
   background-color: #333;
+  color: white;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(2, 10rem);
+  justify-content: center;
 }
