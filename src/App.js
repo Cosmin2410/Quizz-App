@@ -4,6 +4,9 @@ import Answers from './Answers';
 
 function App() {
   const [apiQues, setApiQues] = useState([]);
+  // const [changeQuiz, setChangeQuiz] = useState(0);
+
+  // const test = console.log(true);
 
   useEffect(() => {
     fetch('https://opentdb.com/api.php?amount=1&category=18&type=multiple')
@@ -11,7 +14,7 @@ function App() {
       .then((data) => setApiQues(data.results));
   }, []);
 
-  const test = apiQues.map((ques) => (
+  const getQuestions = apiQues.map((ques) => (
     <Questions
       key={ques.question}
       value={ques.question}
@@ -20,9 +23,12 @@ function App() {
     />
   ));
 
-  // console.log(apiQues[0].incorrect_answers); .map((ans) => ans)
-
-  return <div className="quizz-app">{test}</div>;
+  return (
+    <div className="quizz-app">
+      {getQuestions}
+      <button>click</button>
+    </div>
+  );
 }
 
 export default App;
