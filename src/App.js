@@ -10,7 +10,6 @@ function App() {
     fetch('https://opentdb.com/api.php?amount=1&category=18&type=multiple')
       .then((res) => res.json())
       .then((data) => setApiQues(data.results));
-    console.log(true);
   }, [nextQues]);
 
   const getQuestions = apiQues.map((ques) => {
