@@ -8,3 +8,7 @@ body {
   grid-template-columns: repeat(2, 10rem);
   justify-content: center;
 }
+
+.console-log-level .console-message-text {
+  color: green;
+}
