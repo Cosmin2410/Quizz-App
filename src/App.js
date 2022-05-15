@@ -4,17 +4,14 @@ import Questions from './Questions';
 
 function App() {
   const [apiQues, setApiQues] = useState([]);
-  const [nextQues, setNextQues] = useState(
-    'https://opentdb.com/api.php?amount=1&category=18&type=multiple'
-  );
+  const [nextQues, setNextQues] = useState();
 
   useEffect(() => {
     fetch('https://opentdb.com/api.php?amount=1&category=18&type=multiple')
       .then((res) => res.json())
       .then((data) => setApiQues(data.results));
+    console.log(true);
   }, [nextQues]);
-
-  console.log(true);
 
   const getQuestions = apiQues.map((ques) => {
     // Shuffle answers
